@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"runtime"
 	"strings"
 	"time"
 )
@@ -40,6 +41,9 @@ func main() {
 		log.Println("current status is enabled")
 	} else {
 		log.Println("current status is disabled")
+	}
+	if runtime.GOOS == "windows" {
+		time.Sleep(2 * time.Second)
 	}
 }
 
