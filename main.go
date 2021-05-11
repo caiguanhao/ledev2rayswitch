@@ -95,7 +95,7 @@ func switchV2ray(cookie *http.Cookie, on bool) {
 	if on {
 		enable = "1"
 	}
-	data := `{"method":"v2ray_config.sh","params":[1],"fields":{"v2ray_basic_enable":"` + enable + `"}}`
+	data := `{"id":5555555,"method":"v2ray_config.sh","params":[1],"fields":{"v2ray_basic_enable":"` + enable + `"}}`
 	req, err := http.NewRequest("POST", prefix+"/_api/", strings.NewReader(data))
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 	req.AddCookie(cookie)
